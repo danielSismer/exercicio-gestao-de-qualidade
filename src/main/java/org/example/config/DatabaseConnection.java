@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DatabaseConnection {
 
-    private final static String URL = "jdbc:h2:mem:teste;";
+    private final static String URL = "jdbc:h2:mem:database_gestao_qualidade;DB_CLOSE_DELAY=-1";
     private final static String USER = "sa";
     private final static String PASSWORD = "";
 

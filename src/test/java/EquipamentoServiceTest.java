@@ -47,7 +47,7 @@
             }
         }
 
-        /*@AfterAll
+        @AfterAll
         static void tearDownDatabase() {
             try (Connection conn = DatabaseConnection.getConenction()) {
                 Statement stmt = conn.createStatement();
@@ -56,7 +56,7 @@
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-        }*/
+        }
 
         @BeforeEach
         void clearData() throws SQLException {

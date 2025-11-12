@@ -99,4 +99,6 @@ public class Falha {
                 ", tempoParadaHoras=" + tempoParadaHoras +
                 '}';
     }
+
+
 }

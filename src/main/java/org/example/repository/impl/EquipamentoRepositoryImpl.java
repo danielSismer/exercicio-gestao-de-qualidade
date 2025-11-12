@@ -3,9 +3,7 @@ package org.example.repository.impl;
 import org.example.config.DatabaseConnection;
 import org.example.model.Equipamento;
 import org.example.repository.EquipamentoRepository;
-import org.h2.command.Command;
 
-import javax.xml.crypto.Data;
 import java.sql.*;
 
 public class EquipamentoRepositoryImpl implements EquipamentoRepository{
@@ -68,6 +66,21 @@ public class EquipamentoRepositoryImpl implements EquipamentoRepository{
             return true;
         } catch (SQLException e){
             return false;
+        }
+    }
+
+
+    public void setarStatusEquipamento(long id, Connection conn, String status) throws SQLException{
+        String query = """
+                UPDATE Equipamento
+                SET status = ?
+                WHERE id = ?
+                """;
+        try(
+        PreparedStatement stmt = conn.prepareStatement(query)){
+            stmt.setString(1, status);
+            stmt.setLong(2, id);
+            stmt.executeUpdate();
         }
     }
 }
